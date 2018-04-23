@@ -91,7 +91,7 @@
 							
 							<div class="input-field">
 								<button class="waves-effect waves-light btn-large disabled" 
-								type="submit" onclick="M.toast({html: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})">Crear</button>
+								type="submit" name="crear">Crear</button>
 							</div>
 							<br>
 						</form>

@@ -1,11 +1,21 @@
 /**
  * Vaidar el login
+ * variables del login
  */
 
 var $num = $('#controlA');
 var $pass = $('#passA');
 var $enviar =$('#enviar');
 var b1=false,b2=false;
+/**
+ * variables del sing up
+ */
+var $nombre = $('#nombre');
+var $num2 = $('#control');
+var $pass1 = $('#pass');
+var $pass2 = $('#pass2');
+var $crear =$('#crear');
+var b3=false,b4=false;
 
 $( document ).ready(function()
 {   
@@ -54,7 +64,6 @@ $num.on("keyup click ready",function(event)
     {
         $enviar.addClass('disabled');
     }
-
 });
 
 $pass.on("keyup click",function(event)
@@ -69,7 +78,7 @@ $pass.on("keyup click",function(event)
         $pass.removeClass('valid').addClass('invalid');
         b2=false;
     }
-    if(b1&&b2)
+    if(b1 && b2)
     {
         $enviar.removeClass('disabled');
     }
@@ -77,5 +86,4 @@ $pass.on("keyup click",function(event)
     {
         $enviar.addClass('disabled');
     }
-    
 });
