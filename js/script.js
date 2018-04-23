@@ -100,6 +100,19 @@ $pass1.on("keyup click",function(event)
         $pass1.removeClass('valid').addClass('invalid');
         b5=false;
     }
+    if($pass2.val().length != 0)
+    {
+        if($pass2.val()==$pass1.val())
+        {
+            $pass2.removeClass('invalid').addClass('valid');
+            b6=true;
+        }
+        else
+        {
+            $pass2.removeClass('valid').addClass('invalid');
+            b6=false;
+        }
+    }
     if(b3 && b4 && b5 && b6)
     {
         $crear.removeClass('disabled');
@@ -112,7 +125,7 @@ $pass1.on("keyup click",function(event)
 
 $pass2.on("keyup click",function(event)
 {
-    if($pass2.val()==$pass1.val())
+    if($pass2.val()==$pass1.val() && $pass1.val().length>0)
     {
         $pass2.removeClass('invalid').addClass('valid');
         b6=true;
