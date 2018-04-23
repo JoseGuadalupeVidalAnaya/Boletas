@@ -70,7 +70,7 @@
 							<br>
 							<div class="input-field">
 								<i class="material-icons prefix">keyboard</i>
-								<input id="control" type="text" data-length="12" required="required" name="control">
+								<input id="control" type="text" data-length="13" required="required" name="control">
 								<label for="control">No. Control</label>
 							</div>
 							<br>

@@ -15,7 +15,7 @@ var $num2 = $('#control');
 var $pass1 = $('#pass');
 var $pass2 = $('#pass2');
 var $crear =$('#crear');
-var b3=false,b4=false;
+var b3=false,b4=false,b5=false,b6=false;
 
 $( document ).ready(function()
 {   
@@ -85,5 +85,49 @@ $pass.on("keyup click",function(event)
     else
     {
         $enviar.addClass('disabled');
+    }
+});
+
+$pass1.on("keyup click",function(event)
+{
+    if($pass1.val().length>0)
+    {
+        $pass1.removeClass('invalid').addClass('valid');
+        b5=true;
+    }
+    else
+    {
+        $pass1.removeClass('valid').addClass('invalid');
+        b5=false;
+    }
+    if(b3 && b4 && b5 && b6)
+    {
+        $crear.removeClass('disabled');
+    }
+    else
+    {
+        $crear.addClass('disabled');
+    }
+});
+
+$pass2.on("keyup click",function(event)
+{
+    if($pass2.val()==$pass1.val())
+    {
+        $pass2.removeClass('invalid').addClass('valid');
+        b6=true;
+    }
+    else
+    {
+        $pass2.removeClass('valid').addClass('invalid');
+        b6=false;
+    }
+    if(b3 && b4 && b5 && b6)
+    {
+        $crear.removeClass('disabled');
+    }
+    else
+    {
+        $crear.addClass('disabled');
     }
 });
