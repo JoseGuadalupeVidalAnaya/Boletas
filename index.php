@@ -64,13 +64,27 @@
 						<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 							<div class="input-field">
 								<i class="material-icons prefix">account_circle</i>
-								<input id="nombre" type="text" required="required" name="nombre">
+								<input id="nombre" type="text" required="required" name="nombre"
+								<?php 
+									if(isset($_POST['nombre']))
+									{
+										$var=$_POST['nombre'];
+										echo "value='$var'";
+									}?>>
 								<label for="nombre">Nombre</label>
 							</div>
 							<br>
 							<div class="input-field">
 								<i class="material-icons prefix">keyboard</i>
-								<input id="control" type="number" data-length="13" required="required" name="control">
+								<input id="control" type="number" data-length="13" required="required" name="control"
+								<?php 
+									if(isset($_POST['control']))
+									{
+										$var=$_POST['control'];
+										echo "value='$var'";
+									}
+								?>>
+								>
 								<label for="control">No. Control</label>
 							</div>
 							<br>
