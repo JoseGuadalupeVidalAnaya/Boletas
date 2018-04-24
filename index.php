@@ -70,7 +70,7 @@
 							<br>
 							<div class="input-field">
 								<i class="material-icons prefix">keyboard</i>
-								<input id="control" type="text" data-length="13" required="required" name="control">
+								<input id="control" type="number" data-length="13" required="required" name="control">
 								<label for="control">No. Control</label>
 							</div>
 							<br>
@@ -90,7 +90,7 @@
 							<br>
 							
 							<div class="input-field">
-								<button class="waves-effect waves-light btn-large disabled" 
+								<button id="crear" class="waves-effect waves-light btn-large disabled" 
 								type="submit" name="crear">Crear</button>
 							</div>
 							<br>

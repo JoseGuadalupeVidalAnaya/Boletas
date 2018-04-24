@@ -10,7 +10,7 @@
     print ($nombre.$control.$pass.$pass);
 
 
-    $cons= "SELECT '1'= (SELECT COUNT(no_control) FROM alumno WHERE no_control='2013150480778') as result";
+    $cons= "SELECT '1'= (SELECT COUNT(no_control) FROM alumno WHERE no_control='2013150480778') AS result";
     $gsent = $con->prepare($cons);
     $gsent->execute();
     $result = $gsent->fetch(PDO::FETCH_ASSOC);

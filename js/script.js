@@ -42,6 +42,8 @@ $( document ).ready(function()
         $enviar.addClass('disabled');
     }
     $pass.val("");
+    $pass1.val("");
+    $pass2.val("");
 });
 
 $num.on("keyup click ready",function(event)
@@ -63,6 +65,49 @@ $num.on("keyup click ready",function(event)
     else
     {
         $enviar.addClass('disabled');
+    }
+});
+$num2.on("keyup click ready",function(event)
+{
+    if($num2.val().length!=13)
+    {
+        $num2.removeClass('valid').addClass('invalid');
+        b4=false;
+    }
+    else
+    {
+        $num2.removeClass('invalid').addClass('valid');
+        b4=true;
+    }
+    if(b3 && b4 && b5 && b6)
+    {
+        $crear.removeClass('disabled');
+    }
+    else
+    {
+        $crear.addClass('disabled');
+    }
+});
+
+$nombre.on("keyup click",function(event)
+{
+    if($nombre.val().length>0)
+    {
+        $nombre.removeClass('invalid').addClass('valid');
+        b3=true;
+    }
+    else
+    {
+        $nombre.removeClass('valid').addClass('invalid');
+        b3=false;
+    }
+    if(b3 && b4 && b5 && b6)
+    {
+        $crear.removeClass('disabled');
+    }
+    else
+    {
+        $crear.addClass('disabled');
     }
 });
 
