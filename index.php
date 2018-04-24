@@ -110,7 +110,7 @@
 			$control = $_POST['controlA'];
 			$pass = $_POST['passA'];
 			
-			$cons= "SELECT '1'= (SELECT COUNT(no_control) FROM alumno WHERE no_control='$control' AND pass='$pass') as result";
+			$cons= "SELECT '1'= (SELECT COUNT(no_control) FROM alumno WHERE no_control='$control' AND pass='$pass') AS result";
     		$gsent = $con->prepare($cons);
     		$gsent->execute();
     		$result = $gsent->fetch(PDO::FETCH_ASSOC);
@@ -132,7 +132,45 @@
 				header("Location: php/crear.php");
 				exit;
 			}
-		}	
+		}
+		
+		if(isset($_POST['crear']))
+		{
+			$nombre = $_POST['nombre'];
+			$control = $_POST['control'];
+			$pass = $_POST['pass'];
+			
+			$cons= "SELECT '1'= (SELECT COUNT(no_control) FROM alumno WHERE no_control='$control') AS result";
+    		$gsent = $con->prepare($cons);
+    		$gsent->execute();
+    		$result = $gsent->fetch(PDO::FETCH_ASSOC);
+			$res= array_values($result)[0];
+
+    		if($res==1)
+    		{
+				echo "<script>";
+				echo "$( document ).ready(function()";
+				echo "{";
+    			echo "	Materialize.toast('El Usuario ya Existe', 4000)";
+				echo "});";
+				echo "</script>";
+			}
+			else
+			{
+				$cons = "INSERT INTO alumno VALUES(:nom, :con, :pass)";
+				$gsent = $con->prepare($cons);
+				$gsent->bindParam(':nom', $nombre);
+				$gsent->bindParam(':con', $control);
+				$gsent->bindParam(':pass', $pass);
+				$gsent->execute();
+				echo "<script>";
+				echo "$( document ).ready(function()";
+				echo "{";
+    			echo "	Materialize.toast('Usuario Creado', 4000)";
+				echo "});";
+				echo "</script>";
+			}
+		}
 	?>
 </body>
 </html>
