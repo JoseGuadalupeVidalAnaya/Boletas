@@ -143,7 +143,7 @@
 			{
 				session_start();
 				$_SESSION['control']=$control;
-				header("Location: php/crear.php");
+				header("Location: php/inicio.php");
 				exit;
 			}
 		}
