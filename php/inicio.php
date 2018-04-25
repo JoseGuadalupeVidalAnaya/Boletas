@@ -11,8 +11,29 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">LOGO</a>
+        <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">item1</a></li>
+          <li><a href="#">item2</a></li>
+          <li><a href="#">item3</a></li>
+          <li><a href="#">item4</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-menu">
+          <li><a href="#">item1</a></li>
+          <li><a href="#">item2</a></li>
+          <li><a href="#">item3</a></li>
+          <li><a href="#">item4</a></li>
+        </ul>
+      </div>
+    </nav>
     
     <script src="../js/jquery.js"></script>  
-	<script type="text/javascript" src="../js/materialize.js"></script> 
+    <script type="text/javascript" src="../js/materialize.js"></script> 
+    <script>
+        $(".button-collapse").sideNav();
+    </script>
 </body>
 </html>
