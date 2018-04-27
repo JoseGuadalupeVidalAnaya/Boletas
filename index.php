@@ -170,7 +170,7 @@
 			}
 			else
 			{
-				$cons = "INSERT INTO alumno VALUES(:nom, :con, :pass)";
+				$cons = "INSERT INTO alumno VALUES(:nom, :con, :pass, NULL)";
 				$gsent = $con->prepare($cons);
 				$gsent->bindParam(':nom', $nombre);
 				$gsent->bindParam(':con', $control);
