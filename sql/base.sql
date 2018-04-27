@@ -1,17 +1,25 @@
 create database boletas;
 use boletas;
 
+CREATE TABLE carrera
+(
+    nombre_carrera VARCHAR(50),
+    id_carrera VARCHAR(5) NOT NULL PRIMARY KEY
+);
+
 create table materia
 (
-    nombre_mat varchar(50),
-    clave_mat varchar(8) not null primary key,
+    nombre_materia varchar(50),
+    clave_materia varchar(8) not null primary key,
     creditos int(2),
-    semestre varchar(4)
+    semestre varchar(4),
+    id_carrera VARCHAR(5),
+    foreign key (id_carrera) REFERENCES carrera(id_carrera)
 );
 
 create table alumno
 (
-    nombre_al varchar(50),
+    nombre_alumno varchar(50),
     no_control bigint(13) not null primary key,
     pass varchar(20)
 );
@@ -19,10 +27,10 @@ create table alumno
 create table boletas
 (
     opcion int(1),
-    clave_mat varchar(8),
+    clave_materia varchar(8),
     no_control bigint(13),
     cal int(3),
-    foreign key (clave_mat) references materia(clave_mat),
+    foreign key (clave_materia) references materia(clave_materia),
     foreign key (no_control) references alumno(no_control)
 );
 
