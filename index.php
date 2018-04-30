@@ -19,7 +19,7 @@
 		<div class="col s12 m8 l6 offset-l3 offset-m2">
 			<div class="card z-depth-5">
 				<div class="card-content">
-					<h1 class="brand-logo center" style="font-family: 'Ubuntu', sans-serif;">Boletas</h1>
+					<h1 class="brand-logo center header" style="font-family: 'Ubuntu', sans-serif;">Boletas</h1>
 				</div>
 				<div class="card-tabs ">
 					<ul class="tabs tabs-fixed-width z-depth-1">
