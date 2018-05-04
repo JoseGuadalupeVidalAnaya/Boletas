@@ -26,14 +26,22 @@
 	<div class="navbar-fixed">
 		<nav>
 			<div class="nav-wrapper">
-				<a href="#" class="brand-logo">Mi Nombre</a>
+				<a href="#" class="brand-logo hide-on-med-and-down center">
+				<?php
+					$cons= "SELECT nombre_alumno FROM alumno WHERE no_control ='$usr'";
+					$gsent = $con->prepare($cons);
+					$gsent->execute();
+					$result = $gsent->fetch(PDO::FETCH_ASSOC);
+					$res= array_values($result)[0];
+					echo  $res
+				?></a>
 				<a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
 					<li><a href="#">Mis Boletas</a></li>
 					<li><a href="#">Imprimir</a></li>
 					<li><a href="#">Editar</a></li>
 					<li><a href="#">Agregar</a></li>
-					<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Mi perfil<i class="material-icons right">arrow_drop_down</i></a></li>
 				</ul>
 				<ul class="side-nav" id="mobile-menu">
 				<li><a href="#">Mis Boletas</a></li>

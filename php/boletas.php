@@ -13,7 +13,7 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">LOGO</a>
+          <a href="#" class="brand-logo center">LOGO</a>
           <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="#">item1</a></li>
@@ -30,7 +30,6 @@
         </div>
       </nav>
     </div>
-    
     <div class="fixed-action-btn horizontal">
         <a class="btn-floating btn-large red"><i class="large material-icons">menu</i></a>
         <ul>
