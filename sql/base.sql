@@ -44,3 +44,17 @@ INSERT INTO materia VALUES('Cálculo Diferencial','ACF-0901',5,'1ro','sis');
 INSERT INTO materia VALUES('Matemáticas Discretas','AEF-1041',5,'1ro','sis');
 INSERT INTO materia VALUES('Fundamentos de Programación','SCD-1008',5,'1ro','sis');
 INSERT INTO materia VALUES('Taller de Administración','SCH-1024',4,'1ro','sis');
+
+INSERT INTO materia VALUES('Cálculo Integral','ACF-0902',5,'2do','sis');
+INSERT INTO materia VALUES('Álgebra Lineal','ACF-0903',5,'2do','sis');
+INSERT INTO materia VALUES('Contabilidad Financiera','AEC-1008',4,'2do','sis');
+INSERT INTO materia VALUES('Química','AEC-1058',4,'2do','sis');
+INSERT INTO materia VALUES('Probabilidad y Estadística','AEF-1052',5,'2do','sis');
+INSERT INTO materia VALUES('Programación Orientada a Objetos','SCD-1020',5,'2do','sis');
+
+INSERT INTO materia VALUES('Cálculo Vectorial','ACF-0904',5,'3ro','sis');
+INSERT INTO materia VALUES('Sistemas Operativos','AEC-1061',4,'3ro','sis');
+INSERT INTO materia VALUES('Estructura de Datos','AED-1026',5,'3ro','sis');
+INSERT INTO materia VALUES('Cultura Empresarial','SCC-1005',4,'3ro','sis');
+INSERT INTO materia VALUES('Investigación de Operaciones','SCC-1013',4,'3ro','sis');
+INSERT INTO materia VALUES('Física General','SCF-1006',5,'3ro','sis');
