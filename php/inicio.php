@@ -19,3 +19,4 @@
 		header("Location: boletas.php");
 		exit;
 	}
+?>
