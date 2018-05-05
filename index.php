@@ -31,8 +31,7 @@
 						<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 							<div class="input-field">
 								<i class="material-icons prefix">keyboard</i>
-								<input id="controlA" type="number" data-length="13"
-								required="required" name="controlA"
+								<input id="controlA" type="number" data-length="13" required="required" name="controlA"
 								<?php
 									if(isset($_POST['controlA']))
 									{
@@ -45,15 +44,12 @@
 							<br>
 							<div class="input-field ">
 								<i class="material-icons prefix">lock</i>
-								<input id="passA" type="password" required="required"
-								name="passA">
+								<input id="passA" type="password" required="required" name="passA">
 								<label for="passA">Contraceña</label>
 							</div>
 							<br>
 							<div class="input-field">
-								<button id="enviar"
-								class="waves-effect waves-light btn-large disabled"
-								type="submit" name="enviar">Acceder</button>
+								<button id="enviar" class="waves-effect waves-light btn-large disabled" type="submit" name="enviar">Acceder</button>
 							</div>
 							<br>
 						</form>

@@ -2,7 +2,6 @@
 	include_once "conexion.php";
 	session_start();
 	$usr=$_SESSION['control'];
-				
 	$cons= "SELECT '1'= (SELECT COUNT(no_control) FROM alumno WHERE id_carrera IS NULL AND no_control='$usr') AS result";
 	$gsent = $con->prepare($cons);
 	$gsent->execute();

@@ -3,7 +3,7 @@
   {
     $con=new PDO('mysql:host=localhost;dbname=boletas', 'root', 'pass');
   }
-	catch (PDOException $e) 
+  catch (PDOException $e)
   {
     print "¡Error!: " . $e->getMessage() . "<br/>";
     die();
