@@ -2,7 +2,7 @@
  * Vaidar el login
  * variables del login
  */
-
+M.AutoInit();
 var $num = $('#controlA');
 var $pass = $('#passA');
 var $enviar =$('#enviar');
