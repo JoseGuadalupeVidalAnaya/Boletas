@@ -74,6 +74,6 @@ $enviar.click(function ()
             M.toast({html: 'El Numero de Control o Contraceña Inocrrectos'});
         }
         else
-            location.href = 'php/carrera.html';
+            location.href = 'php/inicio.php';
     });
 });

@@ -19,7 +19,8 @@ create table materia
 
 create table alumno
 (
-    nombre_alumno varchar(50),
+    nombre_alumno varchar(30),
+    apellido_alumno VARCHAR(30),
     no_control bigint(13) not null primary key,
     pass varchar(20),
     id_carrera VARCHAR(5),

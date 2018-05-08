@@ -29,6 +29,8 @@
         $gsent->execute();
         $result = $gsent->fetch(PDO::FETCH_ASSOC);
         $res = array_values($result)[0];
+        session_start();
+        $_SESSION['control']=$control;
         return ['res' => $res == 0];
     }
 

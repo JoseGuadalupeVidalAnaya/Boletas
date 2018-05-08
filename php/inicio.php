@@ -10,12 +10,12 @@
 
     if ($res == 1)
     {
-        header("Location: carrera.php");
+        header("Location: ../pages/carrera.html");
         exit;
     }
     else
     {
-        header("Location: boletas.php");
+        header("Location: ../pages/boletas.html");
         exit;
     }
 ?>
