@@ -63,15 +63,17 @@ $pass.on("blur", function ()
 
 $enviar.click(function ()
 {
-    var x=$pass.val(), y=$num.val();
-    console.log('http://localhost/Boletas/php/conexion.php?passA='+x+'&controlA='+y);
-    fetch('http://localhost/Boletas/php/conexion.php?passA='+x+'&controlA='+y)
-    .then(usr => usr.json()).then(usr =>
+    var x = $pass.val(), y = $num.val();
+    console.log('php/conexion.php?passA=' + x + '&controlA=' + y);
+    fetch('php/conexion.php?passA=' + x + '&controlA=' + y)
+        .then(usr => usr.json()).then(usr =>
     {
         console.log(usr.res);
         if (usr.res)
         {
             M.toast({html: 'El Numero de Control o Contraceña Inocrrectos'});
         }
+        else
+            location.href = 'php/carrera.html';
     });
 });

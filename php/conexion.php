@@ -10,7 +10,7 @@
     try
     {
         $con = new PDO('mysql:host=localhost;dbname=boletas', 'root', 'pass');
-        $usr=getusr();
+        $usr = getusr();
         echo json_encode($usr);
     }
     catch (PDOException $e)
