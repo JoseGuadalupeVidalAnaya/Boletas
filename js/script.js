@@ -1,191 +1,77 @@
 /**
- * Vaidar el login
- * variables del login
+ * Elementos de Materialize.css
  */
 M.AutoInit();
+$(".dropdown-button").dropdown();
+$(".dropdown-button2").dropdown();
+
+$(document).ready(function ()
+{
+    $('.sidenav').sidenav();
+    $('input#controlA, input#control').characterCounter();
+});
+
+/**
+ * Validaciones
+ * @type {*|jQuery|HTMLElement}
+ */
 var $num = $('#controlA');
 var $pass = $('#passA');
-var $enviar =$('#enviar');
-var b1=false,b2=false;
-/**
- * variables del sing up
- */
-var $nombre = $('#nombre');
-var $num2 = $('#control');
-var $pass1 = $('#pass');
-var $pass2 = $('#pass2');
-var $crear =$('#crear');
-var b3=false,b4=false,b5=false,b6=false;
+var $enviar = $('#enviar');
 
-$( document ).ready(function()
-{   
-    if($num.val().length==0)
-    {
-        $num.removeClass('valid','invalid')
-    }
-    else if($num.val().length!=13)
-    {
+$num.on("keypress paste", function (event)
+{
+    if (this.value.length >= this.maxLength)
+        event.preventDefault();
+});
+
+$num.on("blur", function ()
+{
+    if ($num.val().length != 13)
         $num.removeClass('valid').addClass('invalid');
-        b1=false;
-    }
-    else 
-    {
+});
+
+$num.on("keyup click ready", function (event)
+{
+    if ($num.val().length == 13)
         $num.removeClass('invalid').addClass('valid');
-        b1=true;
-    }
-    if(b1&&b2)
-    {
+    else
+        $num.removeClass('valid').removeClass('invalid');
+    if ($num.hasClass('valid') && $pass.hasClass('valid'))
         $enviar.removeClass('disabled');
-    }
     else
-    {
         $enviar.addClass('disabled');
-    }
-    $pass.val("");
-    $pass1.val("");
-    $pass2.val("");
 });
 
-$num.on("keyup click ready",function(event)
+$pass.on("keyup click ready", function (event)
 {
-    if($num.val().length!=13)
-    {
-        $num.removeClass('valid').addClass('invalid');
-        b1=false;
-    }
+    if ($pass.val().length > 0)
+        $pass.addClass('valid').removeClass('invalid');
     else
-    {
-        $num.removeClass('invalid').addClass('valid');
-        b1=true;
-    }
-    if(b1&&b2)
-    {
+        $pass.removeClass('valid').removeClass('invalid');
+    if ($num.hasClass('valid') && $pass.hasClass('valid'))
         $enviar.removeClass('disabled');
-    }
     else
-    {
         $enviar.addClass('disabled');
-    }
-});
-$num2.on("keyup click ready",function(event)
-{
-    if($num2.val().length!=13)
-    {
-        $num2.removeClass('valid').addClass('invalid');
-        b4=false;
-    }
-    else
-    {
-        $num2.removeClass('invalid').addClass('valid');
-        b4=true;
-    }
-    if(b3 && b4 && b5 && b6)
-    {
-        $crear.removeClass('disabled');
-    }
-    else
-    {
-        $crear.addClass('disabled');
-    }
 });
 
-$nombre.on("keyup click",function(event)
+$pass.on("blur", function ()
 {
-    if($nombre.val().length>0)
-    {
-        $nombre.removeClass('invalid').addClass('valid');
-        b3=true;
-    }
-    else
-    {
-        $nombre.removeClass('valid').addClass('invalid');
-        b3=false;
-    }
-    if(b3 && b4 && b5 && b6)
-    {
-        $crear.removeClass('disabled');
-    }
-    else
-    {
-        $crear.addClass('disabled');
-    }
+    if ($pass.val().length <= 0)
+        $pass.addClass('invalid').removeClass('valid');
 });
 
-$pass.on("keyup click",function(event)
+$enviar.click(function ()
 {
-    if($pass.val().length>0)
+    var x=$pass.val(), y=$num.val();
+    console.log('http://localhost/Boletas/php/conexion.php?passA='+x+'&controlA='+y);
+    fetch('http://localhost/Boletas/php/conexion.php?passA='+x+'&controlA='+y)
+    .then(usr => usr.json()).then(usr =>
     {
-        $pass.removeClass('invalid').addClass('valid');
-        b2=true;
-    }
-    else
-    {
-        $pass.removeClass('valid').addClass('invalid');
-        b2=false;
-    }
-    if(b1 && b2)
-    {
-        $enviar.removeClass('disabled');
-    }
-    else
-    {
-        $enviar.addClass('disabled');
-    }
-});
-
-$pass1.on("keyup click",function(event)
-{
-    if($pass1.val().length>0)
-    {
-        $pass1.removeClass('invalid').addClass('valid');
-        b5=true;
-    }
-    else
-    {
-        $pass1.removeClass('valid').addClass('invalid');
-        b5=false;
-    }
-    if($pass2.val().length != 0)
-    {
-        if($pass2.val()==$pass1.val())
+        console.log(usr.res);
+        if (usr.res)
         {
-            $pass2.removeClass('invalid').addClass('valid');
-            b6=true;
+            M.toast({html: 'El Numero de Control o Contraceña Inocrrectos'});
         }
-        else
-        {
-            $pass2.removeClass('valid').addClass('invalid');
-            b6=false;
-        }
-    }
-    if(b3 && b4 && b5 && b6)
-    {
-        $crear.removeClass('disabled');
-    }
-    else
-    {
-        $crear.addClass('disabled');
-    }
-});
-
-$pass2.on("keyup click",function(event)
-{
-    if($pass2.val()==$pass1.val() && $pass1.val().length>0)
-    {
-        $pass2.removeClass('invalid').addClass('valid');
-        b6=true;
-    }
-    else
-    {
-        $pass2.removeClass('valid').addClass('invalid');
-        b6=false;
-    }
-    if(b3 && b4 && b5 && b6)
-    {
-        $crear.removeClass('disabled');
-    }
-    else
-    {
-        $crear.addClass('disabled');
-    }
+    });
 });
