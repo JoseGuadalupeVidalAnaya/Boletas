@@ -72,7 +72,6 @@ $enviar.click(function ()
     fetch('php/sesion.php?passA=' + x + '&controlA=' + y)
         .then(usr => usr.json()).then(usr =>
     {
-        console.log(usr.res);
         if (usr.res)
             M.toast({html: 'El Numero de Control o Contraceña Inocrrectos'});
         else
@@ -186,17 +185,20 @@ function activarCrear()
         $crear.addClass('disabled');
 }
 
-$enviar.click(function ()
+$crear.click(function ()
 {
     var w = $nombre.val(), x = $apellido.val(), y = $pass1.val(), z = $control.val();
-    fetch('php/crearAl.php?nombre=' + w + '&apellido=' + x+'&pass='+y+'&nom'+z)
-        .then(usr => usr.json()).then(usr =>
+    fetch('php/crearAl.php?nombre=' + w + '&apellido=' + x + '&pass=' + y + '&num=' + z)
+        .then(resp => resp.json()).then(resp =>
     {
-        console.log(usr.res);
-        if (usr.res)
-            M.toast({html: 'El Numero de Control o Contraceña Inocrrectos'});
+        if (resp.res == 1)
+        {
+            M.toast({html: 'Usuario Creado'});
+            
+        }
+            
         else
-            location.href = 'php/inicio.php';
+            M.toast({html: 'El Usuario ya Existe'});
     })
         .catch(function ()
         {
