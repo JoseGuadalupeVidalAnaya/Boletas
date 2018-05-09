@@ -194,7 +194,9 @@ $crear.click(function ()
         if (resp.res == 1)
         {
             M.toast({html: 'Usuario Creado'});
-            
+            $('.tabs').tabs('select','acceder');
+            $num.val(z);
+            $pass.val('');
         }
             
         else
