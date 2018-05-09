@@ -69,18 +69,19 @@ function activarEnv()
 $enviar.click(function ()
 {
     var x = $pass.val(), y = $num.val();
-    console.log('php/conexion.php?passA=' + x + '&controlA=' + y);
-    fetch('php/conexion.php?passA=' + x + '&controlA=' + y)
+    fetch('php/sesion.php?passA=' + x + '&controlA=' + y)
         .then(usr => usr.json()).then(usr =>
     {
         console.log(usr.res);
         if (usr.res)
-        {
             M.toast({html: 'El Numero de Control o Contraceña Inocrrectos'});
-        }
         else
             location.href = 'php/inicio.php';
-    });
+    })
+        .catch(function ()
+        {
+            M.toast({html: 'No se pudo conectar con el servidor'});
+        });
 });
 
 /**
@@ -185,4 +186,20 @@ function activarCrear()
         $crear.addClass('disabled');
 }
 
-
+$enviar.click(function ()
+{
+    var w = $nombre.val(), x = $apellido.val(), y = $pass1.val(), z = $control.val();
+    fetch('php/crearAl.php?nombre=' + w + '&apellido=' + x+'&pass='+y+'&nom'+z)
+        .then(usr => usr.json()).then(usr =>
+    {
+        console.log(usr.res);
+        if (usr.res)
+            M.toast({html: 'El Numero de Control o Contraceña Inocrrectos'});
+        else
+            location.href = 'php/inicio.php';
+    })
+        .catch(function ()
+        {
+            M.toast({html: 'No se pudo conectar con el servidor'});
+        });
+});
