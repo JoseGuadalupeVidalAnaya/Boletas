@@ -69,18 +69,16 @@ function activarEnv()
 $enviar.click(function ()
 {
     var x = $pass.val(), y = $num.val();
-    fetch('php/sesion.php?passA=' + x + '&controlA=' + y)
-        .then(usr => usr.json()).then(usr =>
+    fetch('php/sesion.php?passA=' + x + '&controlA=' + y).then(usr => usr.json()).then(usr =>
     {
         if (usr.res)
             M.toast({html: 'El Numero de Control o Contraceña Inocrrectos'});
         else
             location.href = 'php/inicio.php?control=' + y;
-    })
-        .catch(function ()
-        {
-            M.toast({html: 'No se pudo conectar con el servidor'});
-        });
+    }).catch(function ()
+    {
+        M.toast({html: 'No se pudo conectar con el servidor'});
+    });
 });
 
 /**

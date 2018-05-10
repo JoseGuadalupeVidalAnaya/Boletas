@@ -20,8 +20,6 @@ $(document).ready(function ()
 
     fetch('../php/carrera.php').then(car => car.json()).then(car =>
     {
-        //console.log(car);
-
         for (let c of car)
         {
             document.getElementById('carrera').innerHTML += `
@@ -34,4 +32,25 @@ $(document).ready(function ()
     {
         M.toast({html: 'No se pudo conectar con el servidor' + error});
     });
+
+    $('#carrera').on("change", function ()
+    {
+        $('#aceptar').removeClass('disabled');
+    });
+
+    $('#aceptar').click(function ()
+    {
+        let x = $('#carrera').val();
+        fetch('../php/actualizarCarrera.php?usr=' + usr + '&carrera=' + x).then(res => res.json()).then(res =>
+        {
+            if (res.res == 1)
+                location.href = '../pages/boletas.html?usr=' + usr;
+            else
+                M.toast({html: 'Algo salio mal' + error});
+        }).catch(function (error)
+        {
+            M.toast({html: 'No se pudo conectar con el servidor' + error});
+        });
+    });
 });
+

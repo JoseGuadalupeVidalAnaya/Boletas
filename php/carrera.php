@@ -8,8 +8,6 @@
     include_once "conexion.php";
     function carrera($id_carrera, $nombre_carrera)
     {
-        //echo "<option value='$id_carrera'>$nombre_carrera</option>";
-        //echo json_encode([$id_carrera=>$nombre_carrera]);
         return['id'=>$id_carrera,'nombre'=>$nombre_carrera];
     }
 

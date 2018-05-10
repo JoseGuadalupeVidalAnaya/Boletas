@@ -53,21 +53,18 @@
 
             <div class="card-action">
                 <br>
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-                    <div class="input-field">
-                        <select id="carrera" name="carrera">
-                            <option value="" disabled selected id="carreras">Elige una opción</option>
-                            <option value="jak">nnna</option>
-                        </select>
-                        <label>¿Cual es tu Carrera?</label>
-                    </div>
-                    <br>
-                    <div class="input-field">
-                        <button id="aceptar" class="waves-effect waves-light btn-large disabled"
-                                type="submit" name="aceptar">Aceptar
-                        </button>
-                    </div>
-                </form>
+                <div class="input-field">
+                    <select id="carrera" name="carrera">
+                        <option value="" disabled selected id="carreras">Elige una opción</option>
+                    </select>
+                    <label>¿Cual es tu Carrera?</label>
+                </div>
+                <br>
+                <div class="input-field">
+                    <button id="aceptar" class="waves-effect waves-light btn-large disabled blue-grey darken-4"
+                            type="submit" name="aceptar">Aceptar
+                    </button>
+                </div>
             </div>
         </div>
     </div>
