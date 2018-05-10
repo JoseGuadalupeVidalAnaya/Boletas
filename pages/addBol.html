@@ -1,10 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../css/materialize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
+    <title>Mis Boletas</title>
 </head>
 <body>
-$END$
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="../index.html">Cerrar Sesión</a></li>
+    <li><a href="#!">Editar Perifil</a></li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+    <li><a href="../index.html">Cerrar Sesión</a></li>
+    <li><a href="#!">Editar Perifil</a></li>
+</ul>
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper blue-grey darken-4">
+            <a href="#!" class="brand-logo center" id="usr">Repositorio de Boletas</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Mis Boletas</a></li>
+                <li><a href="#">Imprimir</a></li>
+                <li><a href="#">Editar</a></li>
+                <li><a href="#">Agregar</a></li>
+                <li><a class="dropdown-button" href="#!" data-target="dropdown1">Mi perfil<i
+                        class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="#">Mis Boletas</a></li>
+    <li><a href="#">Imprimir</a></li>
+    <li><a href="#">Editar</a></li>
+    <li><a href="#">Agregar</a></li>
+    <li><a class="dropdown-button2" href="#!" data-target="dropdown2">Sesión<i class="material-icons right">arrow_drop_down</i></a>
+    </li>
+</ul>
+
+<div class="container">
+    <table class="responsive-table">
+        <thead>
+        <tr>
+            <th>Materia</th>
+            <th>Calificación</th>
+            <th>Opción</th>
+        </tr>
+        </thead>
+        <tbody id="tabla">
+            <tr>
+                <td>
+                    <input type="text" name="dfg" id="">
+                </td>
+                <td>
+                    <input type="text" name="dfg" id="">
+                </td>
+                <td>
+                    <input type="text" name="dfg" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="dfg" id="">
+                </td>
+                <td>
+                    <input type="text" name="dfg" id="">
+                </td>
+                <td>
+                    <input type="text" name="dfg" id="">
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<div class="fixed-action-btn horizontal">
+    <a class="btn-floating btn-large red"><i class="large material-icons">menu</i></a>
+    <ul>
+        <li><a href="#" class="btn-floating yellow"><i class="material-icons">create</i></a></li>
+        <li><a href="#" class="btn-floating green"><i class="material-icons">print</i></a></li>
+        <li><a id="add" href="#" class="btn-floating blue"><i class="material-icons">add</i></a></li>
+    </ul>
+</div>
+
+<script src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/materialize.js"></script>
+<script src="../js/script5.js"></script>
 </body>
 </html>

@@ -12,6 +12,7 @@ $(document).ready(function ()
     let params = (new URL(document.location)).searchParams;
     let usr = params.get("usr");
     document.getElementById('usr').innerHTML = usr;
+    document.getElementById('add').href="addBol.html?usr="+usr;
 
     fetch('../php/usr.php?usr=' + usr).then(usr => usr.json()).then(usr =>
     {
@@ -44,7 +45,7 @@ $(document).ready(function ()
                             <span class="card-title">${b.semestre}</span>
                         </div>
                         <div class="card-action">
-                            <a href="#">Ver</a>
+                            <a href="verBol.html?usr=${usr}&sem=${b.semestre}">Ver</a>
                             <a href="#">Editar</a>
                             <a href="#">Imprimir</a>
                         </div>
