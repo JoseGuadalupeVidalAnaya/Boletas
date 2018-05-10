@@ -13,5 +13,5 @@
     $cons = "INSERT INTO alumno VALUES('$nombre','$apellido','$num','$pass',NULL)";
     $gsent = $con->prepare($cons);
     $gsent->execute();
-    $resp=['res'=>$gsent->rowCount()];
+    $resp = ['res' => $gsent->rowCount()];
     echo json_encode($resp);

@@ -7,9 +7,9 @@
     $gsent->execute();
     $result = $gsent->fetch(PDO::FETCH_ASSOC);
     $res = array_values($result)[0];
-    if($res==0)
+    if ($res == 0)
     {
         header("Location: inicio.php");
     }
-    $usr=['res' => $res == 0];
+    $usr = ['res' => $res == 0];
     echo json_encode($usr);

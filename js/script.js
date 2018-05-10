@@ -75,7 +75,7 @@ $enviar.click(function ()
         if (usr.res)
             M.toast({html: 'El Numero de Control o Contraceña Inocrrectos'});
         else
-            location.href = 'php/inicio.php?control='+y;
+            location.href = 'php/inicio.php?control=' + y;
     })
         .catch(function ()
         {
@@ -194,11 +194,11 @@ $crear.click(function ()
         if (resp.res == 1)
         {
             M.toast({html: 'Usuario Creado'});
-            $('.tabs').tabs('select','acceder');
+            $('.tabs').tabs('select', 'acceder');
             $num.val(z);
             $pass.val('');
         }
-            
+
         else
             M.toast({html: 'El Usuario ya Existe'});
     })
