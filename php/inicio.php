@@ -1,21 +1,21 @@
 <?php
     include_once "conexion.php";
-    session_start();
-    $usr = $_SESSION['control'];
+    $usr = $_GET['control'];
     $cons = "SELECT '1'= (SELECT COUNT(no_control) FROM alumno WHERE id_carrera IS NULL AND no_control='$usr') AS result";
     $gsent = $con->prepare($cons);
     $gsent->execute();
     $result = $gsent->fetch(PDO::FETCH_ASSOC);
     $res = array_values($result)[0];
+    echo json_encode($usr);
 
-    if ($res == 1)
+    if ($res == 0)
     {
-        header("Location: ../pages/carrera.html");
+        header("Location: ../pages/boletas.html");
         exit;
     }
     else
     {
-        header("Location: ../pages/boletas.html");
+        header("Location: ../pages/carrera.html");
         exit;
     }
 ?>

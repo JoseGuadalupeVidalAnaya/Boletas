@@ -75,7 +75,7 @@ $enviar.click(function ()
         if (usr.res)
             M.toast({html: 'El Numero de Control o Contraceña Inocrrectos'});
         else
-            location.href = 'php/inicio.php';
+            location.href = 'php/inicio.php?control='+y;
     })
         .catch(function ()
         {
