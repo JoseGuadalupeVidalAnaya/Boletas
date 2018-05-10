@@ -86,3 +86,39 @@ INSERT INTO materia_carrera VALUES('AED-1026','3ro','sis');
 INSERT INTO materia_carrera VALUES('SCC-1005','3ro','sis');
 INSERT INTO materia_carrera VALUES('SCC-1013','3ro','sis');
 INSERT INTO materia_carrera VALUES('SCF-1006','3ro','sis');
+
+INSERT INTO boletas VALUES ('1','ACA-0907','2013150480778','86');
+INSERT INTO boletas VALUES ('2','ACC-0906','2013150480778','92');
+INSERT INTO boletas VALUES ('2','ACF-0901','2013150480778','77');
+INSERT INTO boletas VALUES ('2','AEF-1041','2013150480778','75');
+INSERT INTO boletas VALUES ('2','SCD-1008','2013150480778','94');
+INSERT INTO boletas VALUES ('1','SCH-1024','2013150480778','98');
+
+INSERT INTO boletas VALUES ('2','ACF-0902','2013150480778','82');
+
+
+
+
+//Conslutas
+
+SELECT materia.nombre_materia, materia.clave_materia, materia.creditos, boletas.cal, boletas.opcion
+FROM materia, boletas
+WHERE materia.clave_materia=boletas.clave_materia and boletas.no_control='2013150480778';
+
+SELECT nombre_materia, clave_materia
+FROM materia
+WHERE clave_materia
+IN(SELECT clave_materia
+  FROM boletas
+  WHERE clave_materia
+  IN(SELECT clave_materia
+    FROM materia_carrera
+    WHERE materia_carrera.semestre='1ro'));
+
+
+SELECT m.nombre_materia, m.clave_materia, m.creditos,mc.semestre, mc.id_carrera, a.nombre_alumno, b.cal FROM materia m
+INNER JOIN materia_carrera mc ON mc.clave_materia=m.clave_materia
+INNER JOIN alumno a ON a.id_carrera = mc.id_carrera
+INNER JOIN boletas b ON b.clave_materia=m.clave_materia
+WHERE b.no_control='2013150480778'
+GROUP BY mc.semestre;
