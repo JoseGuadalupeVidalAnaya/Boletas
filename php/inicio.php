@@ -10,12 +10,12 @@
 
     if ($res == 0)
     {
-        header("Location: ../pages/boletas.html");
+        header("Location: ../pages/boletas.html?usr=$usr");
         exit;
     }
     else
     {
-        header("Location: ../pages/carrera.html");
+        header("Location: ../pages/carrera.html?usr=$usr");
         exit;
     }
 ?>

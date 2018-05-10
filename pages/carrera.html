@@ -21,7 +21,7 @@
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper blue-grey darken-4">
-            <a href="#!" class="brand-logo center hide-on-med-and-down">Repositorio de Boletas</a>
+            <a href="#!" class="brand-logo center hide-on-med-and-down" id="usr">Repositorio de Boletas</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="#">Mis Boletas</a></li>
@@ -43,5 +43,37 @@
     <li><a class="dropdown-button2" href="#!" data-target="dropdown2">Sesión<i class="material-icons right">arrow_drop_down</i></a>
     </li>
 </ul>
+
+<div class="row">
+    <div class="col s12 m8 l6 offset-l3 offset-m2">
+        <div class="card z-depth-5">
+            <div class="card-content">
+                <h1 class="brand-logo center" style="font-family: 'Ubuntu', sans-serif;">Seleccion de Carrera</h1>
+            </div>
+
+            <div class="card-action">
+                <br>
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                    <div class="input-field">
+                        <select id="carrera" name="carrera">
+                            <option value="" disabled selected>Elige una opción</option>
+                        </select>
+                        <label>¿Cual es tu Carrera?</label>
+                    </div>
+                    <br>
+                    <div class="input-field">
+                        <button id="aceptar" class="waves-effect waves-light btn-large disabled"
+                                type="submit" name="aceptar">Aceptar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/materialize.js"></script>
+<script src="../js/script2.js"></script>
 </body>
 </html>
