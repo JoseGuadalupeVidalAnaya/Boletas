@@ -122,3 +122,10 @@ INNER JOIN alumno a ON a.id_carrera = mc.id_carrera
 INNER JOIN boletas b ON b.clave_materia=m.clave_materia
 WHERE b.no_control='2013150480778'
 GROUP BY mc.semestre;
+
+
+SELECT m.nombre_materia, m.clave_materia FROM materia m
+INNER JOIN materia_carrera mc ON mc.clave_materia=m.clave_materia
+INNER JOIN alumno a ON a.id_carrera = mc.id_carrera
+INNER JOIN boletas b ON b.clave_materia=m.clave_materia
+WHERE b.no_control='2013150480778' and mc.semestre='1ro';

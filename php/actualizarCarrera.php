@@ -7,7 +7,7 @@
      */
     include_once "conexion.php";
     $valor = $_GET['carrera'];
-    $usr=$_GET['usr'];
+    $usr = $_GET['usr'];
     $cons = "UPDATE alumno SET id_carrera = '$valor' WHERE no_control = $usr";
     $gsent = $con->prepare($cons);
     $gsent->execute();

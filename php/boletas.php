@@ -10,7 +10,8 @@
     {
         return ['semestre' => $sem];
     }
-    $usr=$_GET['usr'];
+
+    $usr = $_GET['usr'];
 
     $cons = "SELECT mc.semestre FROM materia m
               INNER JOIN materia_carrera mc ON mc.clave_materia=m.clave_materia

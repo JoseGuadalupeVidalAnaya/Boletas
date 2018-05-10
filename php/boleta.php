@@ -6,12 +6,13 @@
      * Time: 11:32 AM
      */
     include_once "conexion.php";
-    function carrera($nombre,$clave,$cred,$cal,$op)
+    function carrera($nombre, $clave, $cred, $cal, $op)
     {
-        return ["nombre"=>$nombre,"clave"=>$clave,"creditos"=>$cred,"calificacion"=>$cal,"opcion"=>$op];
+        return ["nombre" => $nombre, "clave" => $clave, "creditos" => $cred, "calificacion" => $cal, "opcion" => $op];
     }
-    $usr=$_GET['usr'];
-    $sem=$_GET['sem'];
+
+    $usr = $_GET['usr'];
+    $sem = $_GET['sem'];
 
     $cons = "SELECT m.nombre_materia, m.clave_materia, m.creditos, b.cal,b.opcion FROM materia m
               INNER JOIN materia_carrera mc ON mc.clave_materia=m.clave_materia

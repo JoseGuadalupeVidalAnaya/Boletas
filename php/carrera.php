@@ -8,7 +8,7 @@
     include_once "conexion.php";
     function carrera($id_carrera, $nombre_carrera)
     {
-        return['id'=>$id_carrera,'nombre'=>$nombre_carrera];
+        return ['id' => $id_carrera, 'nombre' => $nombre_carrera];
     }
 
     $cons = "SELECT id_carrera, nombre_carrera FROM carrera ORDER BY nombre_carrera";

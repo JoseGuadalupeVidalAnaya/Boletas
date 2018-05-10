@@ -12,7 +12,7 @@ $(document).ready(function ()
     let params = (new URL(document.location)).searchParams;
     let usr = params.get("usr");
     document.getElementById('usr').innerHTML = usr;
-    document.getElementById('add').href="addBol.html?usr="+usr;
+    document.getElementById('add').href = "addBol.html?usr=" + usr;
 
     fetch('../php/usr.php?usr=' + usr).then(usr => usr.json()).then(usr =>
     {

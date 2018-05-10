@@ -28,7 +28,7 @@ $(document).ready(function ()
         console.log('../php/boleta.php?usr=' + usr + "&sem=" + sem);
         for (let b of bol)
         {
-            document.getElementById('tabla').innerHTML+=`
+            document.getElementById('tabla').innerHTML += `
             <tr>
                 <td>${b.nombre}</td>
                 <td>${b.clave}</td>
