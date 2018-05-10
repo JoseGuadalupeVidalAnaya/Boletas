@@ -1,7 +1,3 @@
-M.AutoInit();
-$(".dropdown-button").dropdown();
-$(".dropdown-button2").dropdown();
-
 $(document).ready(function ()
 {
     $('.sidenav').sidenav();
@@ -20,5 +16,22 @@ $(document).ready(function ()
     }).catch(function ()
     {
         M.toast({html: 'No se pudo conectar con el servidor'});
+    });
+
+    fetch('../php/carrera.php').then(car => car.json()).then(car =>
+    {
+        //console.log(car);
+
+        for (let c of car)
+        {
+            document.getElementById('carrera').innerHTML += `
+                <option value="${c.id}">${c.nombre}</option>`;
+        }
+        M.AutoInit();
+        $(".dropdown-button").dropdown();
+        $(".dropdown-button2").dropdown();
+    }).catch(function (error)
+    {
+        M.toast({html: 'No se pudo conectar con el servidor' + error});
     });
 });
